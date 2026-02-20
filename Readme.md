@@ -23,7 +23,7 @@ Jalankan script instalasi otomatis:
 
 ```bash
 # Clone repository ini
-git clone https://github.com/<username>/ardupilot-sitl-mavros-gazebo-tutorial.git
+git clone https://github.com/arilix/ardupilot-sitl-mavros-gazebo-tutorial.git
 cd ardupilot-sitl-mavros-gazebo-tutorial
 
 # Beri izin eksekusi
