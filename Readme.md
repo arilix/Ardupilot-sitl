@@ -185,8 +185,11 @@ source ~/.bashrc
 **Test Gazebo dengan ArduPilot:**
 
 ```bash
-# Terminal 1: Jalankan Gazebo
-gazebo --verbose ~/ardupilot_gazebo/worlds/iris_ardupilot.world
+# Cek nama world file yang tersedia
+find ~/ardupilot_gazebo -name "*.world"
+
+# Terminal 1: Jalankan Gazebo (gunakan world file yang tersedia)
+gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
 
 # Terminal 2: Jalankan SITL
 cd ~/ardupilot/ArduCopter
@@ -197,7 +200,7 @@ sim_vehicle.py -v ArduCopter -f gazebo-iris --console --map
 
 ```bash
 # Terminal 1: Jalankan Gazebo
-gazebo --verbose ~/ardupilot_gazebo/worlds/iris_ardupilot.world
+gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
 
 # Terminal 2: Jalankan SITL
 cd ~/ardupilot/ArduCopter
@@ -217,6 +220,7 @@ rostopic echo /mavros/state
 | `sim_vehicle.py` tidak ditemukan | Jalankan `. ~/.profile` atau restart terminal |
 | MAVROS tidak konek ke SITL | Pastikan port FCU URL sesuai dengan output SITL |
 | Gazebo crash saat startup | Cek GPU driver: `glxinfo \| grep "OpenGL"` |
+| Gazebo world file `iris_ardupilot.world` tidak ditemukan | Nama file world bisa berbeda tergantung versi plugin. Jalankan `find ~/ardupilot_gazebo -name "*.world"` untuk melihat file yang tersedia. Gunakan `iris_arducopter_cmac.world` atau `iris_arducopter_runway.world` sebagai gantinya. Pastikan juga submodule sudah ter-update: `cd ~/ardupilot_gazebo && git submodule update --init --recursive` |
 | GeographicLib error | Jalankan ulang script `install_geographiclib_datasets.sh` |
 | Build ArduPilot gagal | Pastikan semua submodule ter-clone: `git submodule update --init --recursive` |
 
