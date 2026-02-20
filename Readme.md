@@ -227,5 +227,3 @@ rostopic echo /mavros/state
 - [ArduPilot Gazebo Plugin](https://github.com/khancyr/ardupilot_gazebo)
 - [ROS Noetic Installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - [ROS 2 Foxy Installation](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
-
-## Lisensi
